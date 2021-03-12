@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>侧边栏</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100vm;
+            background-color: #f2f2f2;
+        }
+        .havor {
+            color: #fff;
+            border-left: solid #fff 6px;
+        }
+        .navbar input:checked + label {
+	        left: 0;
+        }
+        .navbar input:checked + label{
+	    /* 沿着y轴旋转180度 */
+	        transform: rotateY(180deg);
+        }
+        .navbar input:checked ~ ul {
+            left: -200px;
+        }
+        .navbar ul li a:hover {
+	        color: #fff;
+        	border-left:6px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar" :style = "styleNavbar">
+        <input type="checkbox" id="checkbox" v-show ="none"/>
+        <label for="checkbox" :style = "styleLable" >
+            <img src="收起2.png" alt="" :style = "styleIma">
+        </label>
+        <ul :style = "styleUl" id = "ul" >
+            <li :style = "styleLi1">
+                <img src="bilibili.png" alt="头像" value = "头像":style = "image" :style = "liChild"  />
+                <span :style = "fontStyle" >用户名</span>
+            </li>
+            <li :style = "styleLi">
+                <a  href="javascript:;" :style = "liChild">
+                    <span :style = "fontStyle">个人信息</span>
+                </a>
+            </li>
+            <li :style = "styleLi">
+                <a href="javascript:;" :style = "liChild" >
+                    <span :style = "fontStyle">招聘列表</span>
+                </a>
+            </li>
+            <li :style = "styleLi">
+                <a  href="javascript:;" :style = "liChild" >
+                    <span :style = "fontStyle">xxxx</span>
+                </a>
+            </li>
+            <li :style = "styleLi">
+                <a  href="javascript:;" :style = "liChild" >
+                    <span :style = "fontStyle">xxxx</span>
+                </a>
+            </li>
+            <li :style = "styleLi">
+                <a  href="javascript:;" :style = "liChild" >
+                    <span :style = "fontStyle">xxxx</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var navbar = new Vue ({
+            el: '#navbar',
+            data: {
+                //大盒子div样式
+                styleNavbar: {
+                    position: "relative",
+                    width: "100%",
+                    height: "50px",
+                    backgroundColor: "#fff",
+                    lineHeight: "50px", 
+                    boxShadow:"0 1px 2px 0 rgba(0, 0, 0, 0.1)"
+                },
+                //label的样式
+                styleLable: {
+                    position: "absolute",
+                    top: "0",
+                    left: "200px",
+                    fontSize: "20px",
+                    color: "#666",
+                    paddingLeft: "20px",
+                    cursor: "pointer",
+                    //过度样式
+                    transition: "all 0.5s"
+                },
+                //收起展开图标样式
+               styleIma: {
+                    height:"30px",
+                    margin:"10px",
+               },
+                //整个选项框ul的样式
+                styleUl: {
+                    position: "absolute",
+                    top: "0", 
+                    left: "0px",
+                    width: "200px",
+                    height: "100vh",
+                    backgroundColor: "#03A9F4",
+                    transition: "all 0.5s",
+                },
+                //用户名样式
+                styleLi1: {
+                    width: "100%",
+                    height: "150px",
+                    marginBottom: "10px",
+                    textAlign:"center",
+                },
+                //每个小链接li的样式
+                styleLi: {
+                    width: "100%",
+                    height: "70px",
+                    marginBottom: "10px",
+                },
+                //li中的文字样式
+                liChild: {
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    width: "100%",
+                    height: "100%",
+                    padding: "10px",
+                    color:"#fff",
+                    textDecoration: "none",
+                   
+                },
+                //头像样式
+                image: {
+                    display:"block",
+                    margin:"10px auto",
+                    width: "80px",
+                    borderRadius:"50%",
+                },
+                //span样式
+                fontStyle: {
+                    color: "#fff",
+                    fontSize: "14px",
+                    whileSpace: "nowrap",
+                    textDecoration: "none",
+                },
+            },
+        })
+        var ul = new Vue ({
+            el : "#ul",
+            methods: {
+                ifShow: function() {
+                    this.left = "-200px";
+                }
+            }
+            
+        })
+
+    </script>
+</body>
+</html>
