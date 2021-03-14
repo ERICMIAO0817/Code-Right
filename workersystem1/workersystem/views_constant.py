@@ -22,3 +22,11 @@ def send_email(username, recive, token):
     html_message = loader.get_template('active.html').render(data)
     send_mail(subject=subject, message=message, from_email=EMAIL_HOST_USER, recipient_list=recipient_list,
               html_message=html_message)
+
+
+def get_join(join1, join2, join3, join4):
+    return (join1 + join2 + join3 + join4) / 4
+
+
+def get_conclude(A, B, C):
+    return A / (A + B + C)
