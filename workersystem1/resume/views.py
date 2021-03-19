@@ -9,21 +9,22 @@ from user.models import User
 def getResume(request):
     name = request.GET.get('name')
     print(name)
-    users = User.objects.filter(u_name=name)
+    users = User.objects.filter(u_username=name)
     if users.exists():
         user = users.first()
         resume = user.resume
         data = {
             'name': user.u_name,
-            'photo': 'localhost:8000/static/uploads' + resume.photo.name,
+            'photo': 'http://localhost:8000/static/uploads/' + resume.photo.name,
             'sex': resume.sex,
             'age': resume.age,
+            'email':resume.user.u_email,
             'work_age': resume.work_age,
             'education': resume.education,
             'experience': resume.experience,
-            'pic1': 'localhost:8000/static/uploads' + resume.pic1.name,
-            'pic2': 'localhost:8000/static/uploads' + resume.pic2.name,
-            'pic3': 'localhost:8000/static/uploads' + resume.pic3.name
+            'pic1': 'http://localhost:8000/static/uploads/' + resume.pic1.name,
+            'pic2': 'http://localhost:8000/static/uploads/' + resume.pic2.name,
+            'pic3': 'http://localhost:8000/static/uploads/' + resume.pic3.name
         }
         return JsonResponse(data)
     return JsonResponse({'msg': '此用户无背景信息'})
