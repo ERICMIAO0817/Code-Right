@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <link rel="stylesheet" href="主页.vue">
+    <title>主页</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <!--导航栏-->
+    <div id = "top_Line" :style = "top_Style">
+        <div id = "top_logo" :style = "top_logo">
+            <img src="#" alt="星云logo">
+        </div>
+        <div class = "register" :style = "top_Register">
+            <a href="#" :style = "top_a">注册</a>
+            <a href="#" :style = "top_a">登录</a>
+        </div>
+    </div>
+    <!--大照片-->
+    <div id = "lbt" class = "swiper-container" :style = "l_picture">
+        <div class="swiper-wrapper">
+            <div class = "swiper-slide">
+                <div class="slider-wrap" :style = "slider_wrap">
+                    <img src="images/星云2.png" alt="轮播图1" :style = "slider_img">
+                    <div class = "introduction" :style = "introduction">
+                        <h2 :style = "introduction_h">星云</h2>
+                        <p :style = "introduction_p"></p>
+                    </div>
+                </div>
+            </div>
+            <div class = "swiper-slide">
+                <div class="slider-wrap" :style = "slider_wrap">
+                    <img src="images/星云1.png" alt="轮播图2" :style = "slider_img">
+                    <div class = "introduction" :style = "introduction">
+                        <h2 :style = "introduction_h"></h2>
+                        <p :style = "introduction_p"></p>
+                    </div>
+                </div>
+            </div>
+            <div class = "swiper-slide">
+                <div class="slider-wrap" :style = "slider_wrap">
+                    <img src="images/星云3.png" alt="轮播图1" :style = "slider_img">
+                    <div class = "introduction" :style = "introduction">
+                        <h2 :style = "introduction_h"></h2>
+                        <p :style = "introduction_p"></p>
+                    </div>
+                </div>
+            </div>
+            <div class = "swiper-slide">
+                <div class="slider-wrap" :style = "slider_wrap">
+                    <img src="images/星云4.png" alt="轮播图1" :style = "slider_img">
+                    <div class = "introduction" :style = "introduction">
+                        <h2 :style = "introduction_h"></h2>
+                        <p :style = "introduction_p"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--分页器-->
+        <div class="swiper-pagination"></div>
+        <!--左右按钮-->
+        <div class="swiper-button-prev" :style = "buttom" ></div>
+        <div class="swiper-button-next" :style = "buttom" ></div>
+    </div>
+    <!--内容-->
+    <div id = "box" :style = "box_style">
+        <div :style = "title">星云，让人才汇集</div>
+        <div :style = "content">
+        <!--小分块-->
+            <div :style = "con_box">
+                <a href="#" :style = "con_a">
+                    <div :style = "a_img">
+                        <img src="images/安全隐私.png" alt="" :style = "a_img_img">
+                    </div>
+                    <div :style = "a_title">
+                        安全隐私
+                    </div>
+                    <div :style = "a_text">
+                        害怕信息泄露，暴露敏感信息？<br>
+                        让信息掌握在自己手里！
+                    </div>
+                </a>
+            </div>
+            <div :style = "con_box">
+                <a href="#" :style = "con_a">
+                    <div :style = "a_img">
+                        <img src="images/能力分析.png" alt="" :style = "a_img_img">
+                    </div>
+                    <div :style = "a_title">
+                        能力分析
+                    </div>
+                    <div :style = "a_text">
+                        个人简历冗长，重点不够突出？<br>
+                        让能力呈现在你的眼中！
+                    </div>
+                </a>
+            </div>
+            <div :style = "con_box">
+                <a href="#" :style = "con_a">
+                    <div :style = "a_img">
+                        <img src="images/背调匹配.png" alt="" :style = "a_img_img">
+                    </div>
+                    <div :style = "a_title">
+                        背调匹配
+                    </div>
+                    <div :style = "a_text">
+                        背调成本过高，担心“引狼入室”？<br>
+                        让工作情况可视化！
+                    </div>
+                </a>
+            </div>
+            <div :style = "con_box">
+                <a href="#" :style = "con_a">
+                    <div :style = "a_img">
+                        <img src="images/日常管理.png" alt="" :style = "a_img_img">
+                    </div>
+                    <div :style = "a_title">
+                        日常管理
+                    </div>
+                    <div :style = "a_text">
+                        日常事物繁杂，无处可以下手？<br>
+                        让星云成为你的助理！
+                    </div>
+                </a>
+            </div>
+            <div :style = "con_box">
+                <a href="#" :style = "con_a">
+                    <div :style = "a_img">
+                        <img src="images/项目评估.png" alt="" :style = "a_img_img">
+                    </div>
+                    <div :style = "a_title">
+                        项目评估
+                    </div>
+                    <div :style = "a_text">
+                        评估工作冗杂，时间成本太高？<br>
+                        让项目评估轻量化！
+                    </div>
+                </a>
+            </div>
+            <div :style = "con_box">
+                <a href="#" :style = "con_a">
+                    <div :style = "a_img">
+                        <img src="images/个性算法.png" alt="" :style = "a_img_img">
+                    </div>
+                    <div :style = "a_title">
+                        个性算法
+                    </div>
+                    <div :style = "a_text">
+                        岗位要求不同，纳贤标准各异？<br>
+                        让匹配算法“私人订制”！
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div id = "buttom" :style = "buttom_style">
+        <div :style = "buttom_text">
+            现在，开始使用星云
+        </div>
+        <a href="#"></a>
+    </div>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        //导航栏的样式
+        var top_Line = new Vue({
+            el: "#top_Line",
+            data: { 
+                top_Style: {
+                    float:"top",
+                    position: "relative",
+                    width: "100%",
+                    height: "54px",
+                    backgroundColor: "white",
+                },
+                top_logo: {
+                    position: "absolute",
+                    width:"120px",
+                    height:"54px",
+                    marginLeft: "20px",
+                    backgroundColor:"skyBlue",
+                },
+                top_Register: {
+                    postition:"absolute",
+                    float: "right",
+                    width: "166px",
+                    height: "54px",
+                    backgroundColor: "white",
+                    lineHeight: "54px",
+                },
+                top_a: {
+                    display: "inline-block",
+                    textDecoration: "none",
+                    width: "58px",
+                    height: "54px",
+                    marginLeft:"16px",
+                    color: "#03A9F4",
+                }
+            }
+        });
+        //大图样式
+        var lbt = new Vue ({
+            el : "#lbt",
+            data : {
+                l_picture: {
+                    width: "100%",
+                    height: "650px",
+                    backgroundColor: "#E0F7FA",
+                },
+                slider_wrap: {
+                    display: "flex",
+                    justiflyContent: "center",
+                    alignItems: "center",
+                },
+                slider_img: {
+                    objectFit: "contain",
+                    width: "100%",
+                    height: "100%",
+                    opacity:"0.9",
+                },
+                introduction: {
+                    position: "absolute",
+                    height: "60%",
+                    left: "200px",
+                    color: "white",
+                },
+                introduction_h: {
+                    display:"inline-block",
+                    fontSize:"100px",
+                    textShadow:"0 0 10px #000",
+                    fontFamily: "cursive",
+                    marginBottom: "20px",
+                },
+                introduction_p: {
+                    fontSize: "30px",
+                    textShadow: "0 0 10px #000",
+                }
+            }
+        });
+        //轮播图
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            // direction: 'vertical',//方向，默认水平
+            loop: true,
+            autoplay: true,
+        
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+       //内容
+        var box = new Vue ({
+            el: "#box",
+            data: {
+                box_style: {
+                    width:"100%",
+                    height:"760px",
+                    backgroundColor:"white",
+                },
+                title: {
+                    width: "100%",
+                    height: "160px",
+                    backgroundColor: "#fff",
+                    lineHeight: "160px",
+                    textAlign: "center",
+                    fontSize: "40px",
+                },
+                content: {
+                    width: "100%",
+                    height: "600px",
+                    textAlign: "center",
+                },
+                con_box: {
+                    display: "inline-block",
+                    width:"420px",
+                    height:"250px",
+                    padding: "40px 20px 0",
+                    marginTop:"10px",
+                    marginRight:"20px",
+                    backgroundColor: "white",
+                },
+               con_a: {
+                    display:"inline-block",
+                    width: "380px",
+                    height: "213.6px",
+                    backgroundColor: "white",
+                    textDecoration:"none",
+                },
+                a_img: {
+                    marginLeft:"20px",
+                    width:"340px",
+                    height:"64px",
+                    backgroundColor:"white",
+                },
+                a_img_img: {
+                    width:"64px",
+                    height:"64px",
+                },
+                a_title: {
+                    marginTop:"20px",
+                    marginLeft:"20px",
+                    width:"340px",
+                    fontSize: "20px",
+                    color:"#666",
+                    backgroundColor:"white",
+                },
+                a_text: {
+                    marginLeft: "20px",
+                    marginTop:"15px",
+                    width:"340px",
+                    fontSize: "14px",
+                    lineHeight:"1.8",
+                    color:"#666",
+                    backgroundColor:"white",
+                }
+            }
+        });
+        //底部
+        var buttom = new Vue ({
+            el: "#buttom",
+            data: {
+                buttom_style: {
+                    width: "100%",
+                    height: "371px",
+                    textAlign:"center",
+                    color:"#fff",
+                    backgroundColor:"#0daeff",
+                },
+                buttom_text: {
+                    padding:"150px 0 30px",
+                    heigh:"57.6px",
+                    fontSize:"42px",
+                }
+            }
+        })
+    </script>
+</body>
+</html>
