@@ -1,6 +1,6 @@
 from django.db import models
 from resume.models import Resume
-from workersystem.views_constant import MALE, FAMALE
+from workersystem.views_constant import MALE, FEMALE
 
 
 # Create your models here.
