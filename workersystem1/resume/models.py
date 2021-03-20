@@ -1,5 +1,5 @@
 from django.db import models
-from workersystem.views_constant import MALE, FAMALE
+from workersystem.views_constant import MALE, FEMALE
 
 
 # Create your models here.
@@ -12,12 +12,12 @@ class Resume(models.Model):
     education = models.TextField()
     experience = models.TextField()
     position = models.CharField(max_length=128, null=True)
-    KPI = models.IntegerField(default=0)
-    conclude = models.IntegerField(default=0)
-    join = models.IntegerField(default=0)
-    pic1 = models.ImageField(upload_to="conclude")
-    pic2 = models.ImageField(upload_to="join")
-    pic3 = models.ImageField(upload_to="KPI")
+    KPI = models.CharField(max_length=255, null=True)
+    conclude = models.CharField(max_length=255, null=True)
+    join = models.CharField(max_length=255, null=True)
+    conclude_pic = models.ImageField(upload_to="conclude")
+    join_pic = models.ImageField(upload_to="join")
+    KPI_pic = models.ImageField(upload_to="KPI")
 
     class Meta:
         db_table = 'resume'
