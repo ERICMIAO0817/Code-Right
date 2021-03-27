@@ -60,13 +60,13 @@ def getResume(request):
 
 
 def getScore(request):
-    name = request.GET.get('name')
+    name = request.POST.get('name')
     users = User.objects.filter(u_username=name)
     user = users.first()
-    group1 = request.GET.get('group1')
-    group2 = request.GET.get('group2')
-    group3 = request.GET.get('group3')
-    group4 = request.GET.get('group4')
+    group1 = request.POST.get('group1')
+    group2 = request.POST.get('group2')
+    group3 = request.POST.get('group3')
+    group4 = request.POST.get('group4')
     A1 = getAlpha(group1)
     A2 = getAlpha(group2)
     A3 = getAlpha(group3)
@@ -74,5 +74,13 @@ def getScore(request):
     lis = str(7 - A1) + '#' + str((A2 + A3) / 2) + '#' + str(A1) + '#' + str(A4) + '#' + str(7 - A4)
     resume = user.resume
     resume.conclude = lis
+    con = resume.conclude
+    print(con)
+    lis = con.split('#')
+    conclude_list = []
+    for i in lis:
+        conclude_list.append(float(i))
+    conclude(conclude_list, name)
+    resume.conclude_pic.name = 'conclude/' + name + '_con.png'
     resume.save()
-    return JsonResponse({'score': lis})
+    return JsonResponse({'picture': 'http://localhost:8000/static/uploads/'+resume.conclude_pic.name})
