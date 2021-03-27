@@ -35,7 +35,7 @@ def get_conclude(A, B, C):
     return A / (A + B + C)
 
 
-def KPI(list,name):
+def KPI(list, name):
     x = []
     for i in range(0, len(list)):
         x.append(i)
@@ -45,10 +45,11 @@ def KPI(list,name):
     plt.legend()
     plt.xlabel('季度')
     plt.ylabel('KPI')
-    plt.savefig('static/uploads/KPI/'+name+'_KPI.png')
+    plt.savefig('static/uploads/KPI/' + name + '_KPI.png')
     plt.show()
 
-def conclude(list,name):
+
+def conclude(list, name):
     # 用于正常显示中文
     plt.rcParams['font.sans-serif'] = 'SimHei'
     # 用于正常显示符号
@@ -57,7 +58,7 @@ def conclude(list,name):
     plt.style.use('ggplot')
     # 构造数据
     values = list
-    feature = ['个人能力', 'QC知识', '解决问题能力', '服务质量意识', '团队精神']
+    feature = [' ', '独立完成力', '思考力', '团队精神', '决断力', '观察力']
     # 设置每个数据点的显示位置，在雷达图上用角度表示
     angles = np.linspace(0, 2 * np.pi, len(values), endpoint=False)
     # 拼接数据首尾，使图形中线条封闭
@@ -69,14 +70,15 @@ def conclude(list,name):
     ax.plot(angles, values, 'o-', linewidth=2)  # 绘制折线图
     ax.fill(angles, values, alpha=0.25)  # 填充颜色
     # 设置图标上的角度划分刻度，为每个数据点处添加标签
-    # ax.set_thetagrids(angles * 180 / np.pi, feature)
-    ax.set_ylim(0, 5)  # 设置雷达图的范围
+    ax.set_thetagrids(angles * 180 / np.pi, feature)
+    ax.set_ylim(0, 7)  # 设置雷达图的范围
     plt.title('综合个人能力')
     ax.grid(True)  # 添加网格线
-    plt.savefig('static/uploads/conclude/'+name+'_con.png')
+    plt.savefig('static/uploads/conclude/' + name + '_con.png')
     plt.show()
 
-def join(list,name):
+
+def join(list, name):
     plt.rcParams['font.sans-serif'] = 'SimHei'
     plt.style.use('ggplot')
     labels = 'A', 'B', 'C', 'D'
@@ -85,6 +87,13 @@ def join(list,name):
     plt.axes(aspect=1)
     plt.pie(x=fraces, labels=labels, autopct='%0f%%', explode=explode, shadow=True)
     plt.title('项目综合评分')
-    plt.savefig('static/uploads/join/'+name+'_join.png')
+    plt.savefig('static/uploads/join/' + name + '_join.png')
     plt.show()
 
+
+def getAlpha(string):
+    count_A = 0
+    for i in string:
+        if i == 'A':
+            count_A = count_A + 1
+    return count_A
