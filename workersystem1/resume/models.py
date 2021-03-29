@@ -18,6 +18,7 @@ class Resume(models.Model):
     conclude_pic = models.ImageField(upload_to="conclude")
     join_pic = models.ImageField(upload_to="join")
     KPI_pic = models.ImageField(upload_to="KPI")
+    temp_score = models.IntegerField(default=0)
 
     class Meta:
         db_table = 'resume'
