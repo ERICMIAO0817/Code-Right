@@ -5,6 +5,7 @@ import Register from '../components/Register.vue'
 import Resume from '../components/Resume.vue'
 import Index from '../components/Index.vue'
 import Question from '../components/question.vue'
+import Select from '../components/select.vue'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
       path:'/user/question',
       name:'Question',
       component:Question
+    },
+    {
+      path: '/select',
+      name: 'Select',
+      component: Select
     }
   ],
   mode: "history"
